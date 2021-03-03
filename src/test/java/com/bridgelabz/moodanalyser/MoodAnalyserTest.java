@@ -9,19 +9,16 @@ public class MoodAnalyserTest {
 
     MoodAnalyser moodAnalyser;
 
-    @Before
-    public void objMethod() {
-        moodAnalyser = new MoodAnalyser();
-    }
-/*
     @Test
     public void testMoodAnalysisWhenReturnSad() {
+        moodAnalyser = new MoodAnalyser("I am in sad Mood");
         String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("SAD", mood);
     }
-*/
+
     @Test
     public void testMoodAnalysisWhenReturnHappy(){
+        moodAnalyser = new MoodAnalyser("I am in Happy Mood");
         String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", mood);
     }
