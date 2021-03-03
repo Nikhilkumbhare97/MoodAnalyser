@@ -13,15 +13,15 @@ public class MoodAnalyserTest {
     public void objMethod() {
         moodAnalyser = new MoodAnalyser();
     }
-/*
+
     @Test
     public void testMoodAnalysisWhenReturnSad() throws Exception{
         String mood = moodAnalyser.analyseMood("I am in sad Mood");
         Assert.assertEquals("SAD", mood);
     }
-*/
+
     @Test
-    public void testMoodAnalysisWhenReturnSad() throws Exception{
+    public void testMoodAnalysisWhenReturnHappy() throws Exception{
         String mood = moodAnalyser.analyseMood("I am in Any Mood");
         Assert.assertEquals("HAPPY", mood);
     }
