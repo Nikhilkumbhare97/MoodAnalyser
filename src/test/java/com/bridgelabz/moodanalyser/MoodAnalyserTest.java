@@ -16,7 +16,17 @@ public class MoodAnalyserTest {
         try {
             moodAnalyser.analyseMood();
         }catch (MoodAnalyserException e) {
-            Assert.assertEquals("Invalid Mood", e.getMessage());
+            Assert.assertEquals("Null Mood", e.getMessage());
+        }
+    }
+
+    @Test
+    public void givenEmptyThrowException() {
+        moodAnalyser = new MoodAnalyser("");
+        try {
+            moodAnalyser.analyseMood();
+        }catch (MoodAnalyserException e) {
+            Assert.assertEquals("Empty Mood", e.getMessage());
         }
     }
 

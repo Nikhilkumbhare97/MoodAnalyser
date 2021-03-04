@@ -1,5 +1,7 @@
 package com.bridegelabz.moodanalyser;
 
+import static com.bridegelabz.moodanalyser.MoodAnalyserException.*;
+
 public class MoodAnalyser {
 
     public String message;
@@ -11,13 +13,16 @@ public class MoodAnalyser {
     public String analyseMood() throws MoodAnalyserException {
 
         try {
+            if (message.length() == 0) {
+                throw new MoodAnalyserException(ExceptionType.EMPTY, "Empty Mood");
+            }
             if (message.contains("Sad")) {
                 return "SAD";
-            } else {
+            }else {
                 return "HAPPY";
             }
         }catch(NullPointerException e){
-            throw new MoodAnalyserException("Invalid Mood");
+            throw new MoodAnalyserException(ExceptionType.NULL, "Null Mood");
         }
     }
 
